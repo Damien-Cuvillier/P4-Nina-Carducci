@@ -99,8 +99,9 @@ nav a {
 }
 .gallery .nav {
 	justify-content: center;
+	gap:10px;
 }
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+.nav-pills .nav-link:hover, .nav-pills .show > .nav-link {
 	color: #fff;
 	background-color: #BEB45A;
 	border-radius:0 ;
