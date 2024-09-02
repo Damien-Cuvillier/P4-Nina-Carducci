@@ -155,7 +155,7 @@
 		<div class="form-container">
 			<h2>Une question ? Une demande de devis ?</h2>
 			<p> N’hésitez pas à m’écrire ! Je vous répondrais en moins de 24 heures</p>
-			<form action="#" method="post">
+			<form itemscope itemtype="http://schema.org/ContactPoint" action="#" method="post">
 				<label for="nom">Nom</label>
 				<input type="text" name="nom" id="nom" required>
 				<label for="email">Email</label>
@@ -167,6 +167,19 @@
 		</div>
 		<div class="picture right">
 			<img src="./assets/images/camera.webp" alt="image d'un appareil photo Lens et de son objectif">
+		</div>
+		<div class="col-md-4">
+			<div class="contact-info">
+				<h3 itemprop="name">Nina Carducci Photographe</h3>
+				<p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+					<span itemprop="streetAddress">68 avenue Alsace-Lorraine</span><br>
+					<span itemprop="addressLocality">Bordeaux</span>, <span itemprop="addressRegion">Aquitaine</span><br>
+					<span itemprop="postalCode">33200</span><br>
+					<span itemprop="addressCountry">France</span>
+				</p>
+				<p itemprop="telephone">05 56 67 78 89</p>
+				<p itemprop="date">Joignable du lundi au vendredi de 10h à 19h</p>
+			</div>
 		</div>
 	</div>
 	
