@@ -234,17 +234,13 @@
       var tag = $(this).data("images-toggle");
 
       $(".gallery-item").each(function() {
-        $(this)
-          .parents(".item-column")
-          .hide();
+        var parentColumn = $(this).parents(".item-column");
+        parentColumn.hide(); // Cache toutes les colonnes d'éléments
+    
         if (tag === "all") {
-          $(this)
-            .parents(".item-column")
-            .show(300);
+          parentColumn.show(300); // Montre toutes les colonnes si le tag est "all"
         } else if ($(this).data("gallery-tag") === tag) {
-          $(this)
-            .parents(".item-column")
-            .show(300);
+          parentColumn.show(300); // Montre uniquement les colonnes qui correspondent au tag
         }
       });
     }
