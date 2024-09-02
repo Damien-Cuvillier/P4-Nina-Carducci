@@ -12,11 +12,26 @@
 	<meta charset="UTF-8">
 	<script src="./assets/bootstrap/bootstrap.bundle.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-	
+	<meta property="og:title" content="Portfolio de Nina Carducci - Photographe Portraits, Mariages, Événements" />
+	<meta property="og:description" content="Découvrez le portfolio de Nina Carducci, photographe spécialisée en portraits, mariages, et événements. Explorez des galeries captivantes, des services personnalisés, et contactez-moi pour immortaliser vos moments précieux." />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="http://127.0.0.1:5500/index.html" />
+	<meta property="og:image" content="https://www.ninacarducci.photo/assets/images/og-image.jpg" />
+	<meta property="og:locale" content="fr_FR" />
+	<meta property="og:site_name" content="Nina Carducci Photography" />
+
+	<!-- Twitter Card Meta Tags -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Portfolio de Nina Carducci - Photographe Portraits, Mariages, Événements" />
+	<meta name="twitter:description" content="Découvrez le portfolio de Nina Carducci, photographe spécialisée en portraits, mariages, et événements. Explorez des galeries captivantes, des services personnalisés, et contactez-moi pour immortaliser vos moments précieux." />
+	<meta name="twitter:image" content="https://www.ninacarducci.photo/assets/images/twitter-image.jpg" />
+	<meta name="twitter:site" content="@NinaCarducciPhoto" />
+	<meta name="twitter:creator" content="@NinaCarducciPhoto" />
+
 </head>
 <body>
-<div class="top-header">
-	<h1 class="name">Nina Carducci</h1>
+<div itemscope itemtype="http://schema.org/Person" class="top-header">
+	<h1 itemprop="name" class="name">Nina Carducci</h1>
 	<nav>   
 		<ul>
 			<li><a href="#about">À propos</a></li>
@@ -27,7 +42,7 @@
 		</ul>
 	</nav>
 </div>
-<div id="header">
+<div itemscope itemtype="http://schema.org/Photograph" class="header">
 
 	<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
 		<div class="carousel-indicators">
@@ -56,7 +71,7 @@
 		</button>
 	</div>
 </div>
-<div id="about">
+<div itemscope itemtype="http://schema.org/Person" id="about">
 	<div class="picture left">
 		<img src="./assets/images/nina.webp" alt="photo de l'artiste Nina Carducci">
 	</div>
@@ -67,8 +82,8 @@
 			C’est ce que je vous propose : saisir ces merveilleux moments au travers de mon regard, mon approche, ma technique. Rendre ces moments immortels, afin que vous puissiez y puiser de l’amour, du bonheur, de la tendresse et de lumière à chaque fois que vous poserez les yeux sur vos photos.</p>
 	</div>
 </div>
-<section id="gallery">
-	<h2 class="title">Portfolio</h2>
+<section itemscope itemtype="http://schema.org/ImageGallery" id="gallery">
+	<h2 itemprop="name" class="title">Portfolio</h2>
 	<div class="container py-3">
 		<div class="gallery" style="display: none">
 			<img data-gallery-tag="Concert" class="gallery-item" src="./assets/images/gallery/concerts/aaron-paul-wnX-fXzB6Cw-unsplash.webp" alt="Groupe de rock jouant sur scène avec des lumières rouges et la foule levant les bras">
@@ -91,8 +106,8 @@
 		</figure>
 	</div>
 </section>
-<div id="services">
-	<h2 class="title">Mes services</h2>
+<div itemscope itemtype="http://schema.org/Service" id="services">
+	<h2 itemprop="name" class="title">Mes services</h2>
 	<div class="container">
 		<div class="service">
 			<div class="service__description">
@@ -135,7 +150,7 @@
 		<figcaption class="quote__author">- Richard Avedon</figcaption>
 	</figure>
 </div>
-<div id="contact">
+<section itemscope itemtype="http://schema.org/LocalBusiness" id="contact">
 	<div class="container">
 		<div class="form-container">
 			<h2>Une question ? Une demande de devis ?</h2>
@@ -154,7 +169,8 @@
 			<img src="./assets/images/camera.webp" alt="image d'un appareil photo Lens et de son objectif">
 		</div>
 	</div>
-</div>
+	
+</section>
 <script src="./assets/maugallery.js"></script>
 <script src="./assets/scripts.js"></script>
 </body>
