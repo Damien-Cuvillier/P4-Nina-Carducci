@@ -42,7 +42,7 @@ nav a {
 	width: 20px;
 }
 
-#about {
+#about, #contact  {
 	display: flex;
 	background-color: #F6D2B8;
 	padding-inline: 100px;
@@ -50,7 +50,7 @@ nav a {
 	position: relative;
 }
 
-.picture.left::before {
+.picture.left::before{
 	content: ' ';
 	background-color: #E5975F;
 	width: 374px;
@@ -60,7 +60,16 @@ nav a {
 	left: 0;
 	z-index: -1;
 }
-
+.picture.right::before {
+	content: ' ';
+	background-color: #BEB45A;
+	width: 374px;
+	height: 329px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	z-index: -1;
+}
 .picture {
 	flex: 1;
 	margin: 0 20px;
@@ -73,7 +82,10 @@ nav a {
 }
 .picture img {
 	width: 100%;
-
+}
+img{
+	width: 100%;
+	height: 100%;
 }
 #about-me {
 	flex: 2
@@ -94,9 +106,6 @@ nav a {
 	font-size: 14px;
 }
 
-#gallery {
-	/*	min-height: 100vh; */
-}
 .title{
 	text-align: center;
 	padding-block: 2em;
@@ -111,9 +120,16 @@ nav a {
 	border-radius:0 ;
 	
 }
-.nav-pills .nav-link {
+.nav-link.active-tag {
+	background-color: #BEB45A; /* Couleur de fond pour le bouton actif */
+	color: #fff; /* Couleur du texte pour le bouton actif */
+  }
+.nav-pills, .nav-link {
 	color: #000;
 	cursor: pointer;
+	color: #000; /* Couleur du texte par défaut */
+	transition: background-color 0.3s ease, color 0.3s ease;
+	
 }
 .item-column {
 	position: relative;
@@ -136,13 +152,43 @@ nav a {
 .mg-prev, .mg-next {
 	width: 30px;
 	height: 30px;
-	border-radius: 00%;
+	border-radius: 50%;
 	justify-content: center;
 	align-items: center;
 	display: flex;
 	font-size: 24px;
+	cursor: pointer;
+    position: absolute;
+    top: 50%;
+    background: white;
 }
+.mg-prev {
+    left: -15px;
+  }
 
+.mg-next {
+    right: -15px;
+  }
+
+.hidden-element {
+    display: none;
+  }
+  
+.carousel-control-next-icon, .carousel-control-prev-icon{
+	background-color: black;
+	border: 1px solid #fff;
+}
+.visually-hidden {
+	position: absolute;
+	color:#000;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+  }
 .quote {
 	font-family: 'Spectral';
 	font-style: italic;
@@ -208,19 +254,9 @@ nav a {
 #contact .container {
 	display: flex;
 }
-.picture.right::before {
-	content: ' ';
-	background-color: #BEB45A;
-	width: 374px;
-	height: 329px;
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	z-index: -1;
-}
+
 .form-container {
 	flex : 2;
-
 }
 form {
 	display: flex;
@@ -250,53 +286,8 @@ input[type="submit"] {
 	background-color: #BEB45A;
 	padding: .5em 1em
 }
-/*début projet */
-.mg-prev, .mg-next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    background: white;
-  }
-  .nav-link {
-	background-color: #f0f0f0; /* Couleur de fond par défaut */
-	color: #000; /* Couleur du texte par défaut */
-	transition: background-color 0.3s ease, color 0.3s ease;
-	cursor: pointer;
-  }
-  .nav-link.active-tag {
-	background-color: #BEB45A; /* Couleur de fond pour le bouton actif */
-	color: #fff; /* Couleur du texte pour le bouton actif */
-  }
-.mg-prev {
-    left: -15px;
-  }
 
-.mg-next {
-    right: -15px;
-  }
 
-.hidden-element {
-    display: none;
-  }
-  
-.carousel-control-prev, .carousel-control-next {
-	
-  }
-.carousel-control-next-icon, .carousel-control-prev-icon{
-	background-color: black;
-	border: 1px solid #fff;
-}
-.visually-hidden {
-	position: absolute;
-	color:#000;
-	width: 1px;
-	height: 1px;
-	margin: -1px;
-	padding: 0;
-	overflow: hidden;
-	clip: rect(0, 0, 0, 0);
-	border: 0;
-  }
 @media all and (max-width: 1180px) {
 	.picture {
 		flex : 2;
