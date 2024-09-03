@@ -89,7 +89,7 @@ nav a {
 }
 .picture img {
 	width: 100%;
-	height: 100%;
+	height: 100%
 }
 
 #about-me {
@@ -111,13 +111,13 @@ nav a {
 	width: 80%;
 	font-size: 14px;
 }
-/* img.lazyload {
+img.lazyload {
 	display: block;
 	width: 100%;
 	height: auto;
-	background-color: #f0f0f0; /* placeholder color 
-  }*/
-   
+	background-color: #f0f0f0; /* placeholder color */
+  }
+  
 .title{
 	text-align: center;
 	padding-block: 2em;
@@ -322,7 +322,7 @@ input[type="submit"] {
 		margin-top: 0;
 		margin-bottom: 1em;
 	}
-	#about-me, #about-me p {
+	#about-me h6, #about-me p {
 		width: 100%;
 	}
 }
@@ -420,4 +420,3 @@ input[type="submit"] {
 		width: 80%;
 	}
 }
-
