@@ -142,16 +142,8 @@ nav a {
 	
 }
 .nav-link.active-tag {
-	background-color: #BEB45A; /* Couleur de fond pour le bouton actif */
+	background-color: #BEB45A !important; /* Couleur de fond pour le bouton actif */
 	color: #fff; /* Couleur du texte pour le bouton actif */
-  }
-  .active-tag {
-	background-color: #BEB45A;
-	color: white;
-  }
-  
-  .active-tag:hover {
-	background-color: #BEB45A;
   }
 
 .nav-pills, .nav-link {

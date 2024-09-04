@@ -30,6 +30,9 @@
       }
 
       $this.fadeIn(500);
+
+      // Assurer que le bouton "Tous" est actif par défaut au chargement de la page
+      $(".nav-link[data-images-toggle='all']").addClass("active-tag");
     });
   };
 
@@ -130,7 +133,8 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-body">
-                ${navigation ? '<div class="mg-prev"></div>' : ''}
+                ${navigation ? '<div class="mg-prev"></div>' :
+                ''}
                 <img class="lightboxImage img-fluid" alt="Contenu de l'image affichée dans la modale au clique">
                 ${navigation ? '<div class="mg-next"></div>' : ''}
               </div>
@@ -154,6 +158,9 @@
       } else {
         console.error(`Unknown tags position: ${position}`);
       }
+      
+      // Assurer que le bouton "Tous" est actif par défaut au chargement de la page
+      $(".nav-link[data-images-toggle='all']").addClass("active-tag");
     },
     filterByTag() {
       if ($(this).hasClass("active-tag")) {
@@ -176,3 +183,8 @@
     }
   };
 })(jQuery);
+
+// Assurer que le bouton "Tous" est actif par défaut au chargement de la page
+$(document).ready(function() {
+  $(".nav-link[data-images-toggle='all']").addClass("active-tag");
+});
