@@ -1,6 +1,5 @@
 (function($) {
   $.fn.mauGallery = function(options) {
-    // Normalisation des options
     const normalizedOptions = $.extend({}, $.fn.mauGallery.defaults, options);
     let tagsCollection = [];
 
@@ -56,35 +55,30 @@
     $(".gallery").on("click", ".mg-next", () => $.fn.mauGallery.methods.nextImage());
   };
 
-  // Fonction principale de navigation d'images dans la lightbox
   function navigateImage(direction) {
     const $lightboxImage = $(".lightboxImage");
     const activeImageSrc = $lightboxImage.attr("src");
 
-    const $activeImage = $("img.gallery-item").filter(function() {
-      return $(this).attr("src") === activeImageSrc;
-    });
+    const imagesCollection = $("img.gallery-item").map(function() {
+      return $(this).attr("src");
+    }).get();
 
-    if ($activeImage.length === 0) {
-      console.error("Image active non trouvée. Assurez-vous que l'image est correctement chargée.");
+    const currentIndex = imagesCollection.indexOf(activeImageSrc);
+
+    if (currentIndex === -1) {
+      console.error("Image active non trouvée dans la collection.");
       return;
     }
 
-    const activeTag = $(".tags-bar span.active-tag").data("images-toggle") || "all";
-    const imagesCollection = $("img.gallery-item").filter(function() {
-      const $img = $(this);
-      return activeTag === "all" || $img.data("gallery-tag") === activeTag;
-    }).toArray();
+    let newIndex = currentIndex;
 
-    if (imagesCollection.length === 0) {
-      console.error("Aucune image trouvée pour le tag actif. Vérifiez les balises d'image.");
-      return;
+    if (direction === 'next') {
+      newIndex = (currentIndex + 1) % imagesCollection.length;
+    } else if (direction === 'prev') {
+      newIndex = (currentIndex - 1 + imagesCollection.length) % imagesCollection.length;
     }
 
-    const currentIndex = imagesCollection.findIndex(img => img.src === activeImageSrc);
-    const newIndex = (currentIndex + (direction === 'next' ? 1 : -1) + imagesCollection.length) % imagesCollection.length;
-
-    $lightboxImage.attr("src", imagesCollection[newIndex].src);
+    $lightboxImage.attr("src", imagesCollection[newIndex]);
   }
 
   $.fn.mauGallery.methods = {
