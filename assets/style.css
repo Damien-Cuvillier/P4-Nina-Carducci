@@ -56,6 +56,8 @@ nav a {
 	padding-inline: 100px;
 	padding-block: 100px;
 	position: relative;
+	width: 100%;
+	height: 100%;
 }
 
 .picture.left::before{
@@ -129,6 +131,10 @@ nav a {
 	justify-content: center;
 	gap:10px;
 }
+#gallery{
+	width: 100%;
+	height: 100%;
+}
 .nav-pills .nav-link:hover, .nav-pills .show > .nav-link {
 	color: #fff;
 	background-color: #BEB45A;
@@ -139,6 +145,15 @@ nav a {
 	background-color: #BEB45A; /* Couleur de fond pour le bouton actif */
 	color: #fff; /* Couleur du texte pour le bouton actif */
   }
+  .active-tag {
+	background-color: #BEB45A;
+	color: white;
+  }
+  
+  .active-tag:hover {
+	background-color: #BEB45A;
+  }
+
 .nav-pills, .nav-link {
 	color: #000;
 	cursor: pointer;
