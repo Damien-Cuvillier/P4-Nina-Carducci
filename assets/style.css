@@ -136,14 +136,14 @@ nav a {
 	height: 100%;
 }
 .nav-pills .nav-link:hover, .nav-pills .show > .nav-link {
-	color: #fff;
+	color: black;
 	background-color: #BEB45A;
 	border-radius:0 ;
 	
 }
 .nav-link.active-tag {
 	background-color: #BEB45A !important; /* Couleur de fond pour le bouton actif */
-	color: white !important; /* Couleur du texte pour le bouton actif */
+	color: black !important; /* Couleur du texte pour le bouton actif */
   }
 
 .nav-pills, .nav-link {
