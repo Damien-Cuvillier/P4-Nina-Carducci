@@ -3,38 +3,25 @@
 <head>
     <!-- Métadonnées pour la description de la page -->
     <meta name="description" content="Découvrez le portfolio de Nina Carducci, photographe spécialisée en portraits, mariages, et événements. Contactez-moi pour immortaliser vos moments précieux.">
-    
     <!-- Paramètres de la vue pour un affichage optimal sur tous les appareils -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Langue du document -->
     <meta name="language" content="fr-FR">
-    
     <!-- Clé de vérification Google pour le SEO -->
     <meta name="google-site-verification" content="votre_clé_de_vérification">
-    
     <!-- Lien vers la feuille de style Bootstrap -->
     <link rel="stylesheet" href="./assets/bootstrap/bootstrap.css">
-    
-    <!-- Titre de la page -->
-    <title>Portfolio de Nina Carducci - Photographe Portraits, Mariages, Événements</title>
-    
     <!-- Lien vers la feuille de style personnalisée -->
     <link rel="stylesheet" href="./assets/style.css">
-    
     <!-- Préconnexion pour optimiser le chargement des polices Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
+    <!-- Titre de la page -->
+    <title>Portfolio de Nina Carducci - Photographe Portraits, Mariages, Événements</title>
     <!-- Chargement des polices Google -->
     <link href="https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap" rel="stylesheet">
-    
-    <!-- Définition du jeu de caractères -->
     <meta charset="UTF-8">
-    
     <!-- Directives pour les robots d'indexation -->
     <meta name="robots" content="index, follow">
-    
     <!-- Scripts JavaScript pour Bootstrap et jQuery -->
     <script src="./assets/bootstrap/bootstrap.bundle.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -55,6 +42,35 @@
     <meta name="twitter:image" content="https://www.ninacarducci.photo/assets/images/twitter-image.jpg" />
     <meta name="twitter:site" content="@NinaCarducciPhoto" />
     <meta name="twitter:creator" content="@NinaCarducciPhoto" />
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "Nina Carducci Photographe",
+          "image": "https://damien-cuvillier.github.io/P4-Nina-Carducci/assets/images/nina.webp",
+          "@id": "https://damien-cuvillier.github.io/P4-Nina-Carducci/assets/images/nina.webp",
+          "url": "https://damien-cuvillier.github.io/P4-Nina-Carducci/",
+          "telephone": "05 56 67 78 89",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "68 avenue Alsace-Lorraine",
+            "addressLocality": "Bordeaux",
+            "postalCode": "33200",
+            "addressCountry": "FR"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 44.8465743,
+            "longitude": -0.6065366999999999
+          },
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "10:00",
+            "closes": "19:00"
+          }
+        }
+      </script>
 </head>
 <body>
 
@@ -73,8 +89,8 @@
             <li><a href="#services">Service</a></li>
             <li><a href="#contact">Contact</a></li>
             <!-- Lien vers le profil Instagram -->
-            <li><a class="social-link" href="https://www.instagram.com/ninacarducci.photo/?hl=fr" target="_blank" itemprop="sameAs">
-                <img src="assets/images/instagram.png" alt="photo du logo instagram"> Instagram</a></li>
+            <li><a class="social-link" aria-label="Instagram" href="https://www.instagram.com/ninacarducci.photo/?hl=fr" target="_blank" itemprop="sameAs">
+                <img src="assets/images/instagram.png" alt="photo du logo instagram"></a></li>
         </ul>
     </nav>
 </div>
