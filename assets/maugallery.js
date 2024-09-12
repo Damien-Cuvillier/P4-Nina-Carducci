@@ -75,31 +75,33 @@
 
   // Fonction pour naviguer entre les images dans la lightbox
   function navigateImage(direction) {
-    const $lightboxImage = $(".lightboxImage");
-    const activeImageSrc = $lightboxImage.attr("src");
+    const $lightboxImage = $(".lightboxImage"); //selectionne l'image actuelle de la lightbox
+    const activeImageSrc = $lightboxImage.attr("src");// récupère l'URL (source) de l'image actuellement affichée dans la lightbox.
 
-    // Récupération des URL des images dans la galerie
-    const imagesCollection = $("img.gallery-item").map(function() {
-      return $(this).attr("src");
-    }).get();
+    // Récupération des URL des images dans la galerie avec la classe gallery-item
+    const imagesCollection = $("img.gallery-item").map(function() { //utilise la méthode .map() de jQuery pour créer un tableau des URLs des images.
+      return $(this).attr("src"); 
+    }).get(); // convertit l'objet jQuery en un tableau JavaScript normal.
 
-    const currentIndex = imagesCollection.indexOf(activeImageSrc);
+    const currentIndex = imagesCollection.indexOf(activeImageSrc); //trouve l'index de l'image actuellement affichée dans le tableau imagesCollection
 
-    if (currentIndex === -1) {
+    if (currentIndex === -1) { // Si l'index de l'image n'est pas trouvé dans le tableau, affiche message d'erreur
       console.error("Image active non trouvée dans la collection.");
       return;
     }
 
-    let newIndex = currentIndex;
+    let newIndex = currentIndex; //  initialise newIndex avec la valeur de currentIndex.
 
     // Détermination de l'index de la nouvelle image
     if (direction === 'next') {
-      newIndex = (currentIndex + 1) % imagesCollection.length;
+      //newIndex est mis à jour permet de passer à l'image suivante et de revenir au début de la collection lorsqu'on atteint la fin.
+      newIndex = (currentIndex + 1) % imagesCollection.length; 
     } else if (direction === 'prev') {
+      //newIndex est mis à jour permet de passer à l'image précédente et de revenir à la fin de la collection lorsqu'on atteint le début.
       newIndex = (currentIndex - 1 + imagesCollection.length) % imagesCollection.length;
     }
 
-    // Changement de l'image affichée dans la lightbox
+    // met à jour l'URL de l'image affichée dans la lightbox avec celle de la nouvelle image déterminée par newIndex
     $lightboxImage.attr("src", imagesCollection[newIndex]);
   }
 
@@ -192,20 +194,28 @@
     },
     // Filtrage des images en fonction du tag sélectionné
     filterByTag() {
-      if ($(this).hasClass("active-tag")) {
-        return;
+      if ($(this).hasClass("active-tag")) { // Vérifie si le tag est déjà actif
+        return; // Si oui, ne fait rien et quitte la fonction
       }
-      
+       // Supprime la classe 'active-tag' du bouton actuellement actif
       $(".active-tag").removeClass("active active-tag");
+
+      // Ajoute la classe 'active-tag' au bouton cliqué
       $(this).addClass("active-tag");
 
+       // Récupère la valeur du data attribute 'images-toggle' du bouton cliqué
       const tag = $(this).data("images-toggle");
 
+       // Parcourt chaque élément de la galerie
       $(".gallery-item").each(function() {
+         // Récupère le parent de l'élément avec la classe 'item-column'
         const parentColumn = $(this).parents(".item-column");
+          // Masque l'élément parent
         parentColumn.hide();
 
+        // Vérifie si le tag est 'all' ou si l'élément a le même tag que celui cliqué puis affiche le parent si le tag correspond
         if (tag === "all" || $(this).data("gallery-tag") === tag) {
+          // affiche le parent de l'élément avec un effet de transition de 300ms
           parentColumn.show(300);
         }
       });
